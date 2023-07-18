@@ -15,7 +15,7 @@ import pandas as pd
 driver = webdriver.Chrome()
 new_url = "https://www.imdb.com/event/ev0000003/2017/1/?ref_=fea_eds_top-1_2"  # Starting URL
 
-new_year_range = range(2017, 2024)  # Years from 2000 to 2023
+new_year_range = range(2017, 2018)  # Years from 2017 to 2023
 
 def get_inner_text(search_text):
     element = WebDriverWait(driver, 30).until(
@@ -57,7 +57,6 @@ for year in new_year_range:
     }
 
     data.append(award_data)
-
     # Go to the next year's page
     driver.get(f"https://www.imdb.com/event/ev0000003/{year+1}/1/?ref_=fea_eds_top-1_2")
 
